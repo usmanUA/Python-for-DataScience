@@ -1,0 +1,9 @@
+[project]
+name = "ft_package"
+version = "0.0.1"
+authors = [
+  { name="uahmed", email="uahmed@student.hive.fi" },
+]
+license = {file = "LICENSE"}
+[project.urls]
+home-page = "https://github.com/eagle/ft_package"
