@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import seaborn as sns
 from load_csv import load
 
@@ -28,12 +29,19 @@ def main():
     '''
     df = load("life_expectancy_years.csv")
     try:
-        finland = df[df['country'].str.contains('Finland')]
+        df.set_index("country", inplace=True)
+        years = df.columns.tolist()
+        new = df.T
+        new['Years'] = years
+        df = new
+        finland = df['Finland']
     except KeyError:
         print("Finland is not included in this dataset")
-    finland_df = finland.reset_index()
-#    finland_df.columns = ['Year', 'Life Expectancy']
-    print(finland_df)
+    sns.lineplot(data=df, x='Years', y='Finland')
+    plt.title(f"Finland Life Expectancy Projections")
+    plt.xlabel('Year')
+    plt.ylabel('Life Expectancy')
+    plt.show()
 
 
 if __name__ == "__main__":
