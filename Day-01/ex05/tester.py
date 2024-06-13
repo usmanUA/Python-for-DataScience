@@ -9,7 +9,7 @@ img3 = ft_green(array)
 img4 = ft_blue(array)
 img5 = ft_grey(array)
 
-fig, axs = plt.subplots(3, 2, figsize=(8, 12))
+fig, axs = plt.subplots(3, 2, figsize=(6, 8))
 
 axs[0, 0].imshow(array)
 axs[0, 0].set_title('Original')

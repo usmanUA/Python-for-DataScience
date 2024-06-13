@@ -42,10 +42,10 @@ class Lannister(Character):
     @classmethod
     def create_lannister(cls, first_name, is_alive):
         '''Create a new instance of the Class Lannister'''
-        instance = cls(first_name, is_alive)
-        instance.first_name = first_name
-        instance.is_alive = is_alive
-        return instance
+        new_obj = cls(first_name, is_alive)
+        new_obj.first_name = first_name
+        new_obj.is_alive = is_alive
+        return new_obj
 
     def __str__(self):
         '''Returns the string representation of Baratheon family'''
